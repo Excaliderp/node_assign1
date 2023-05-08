@@ -1,0 +1,26 @@
+# Directories
+node_modules/
+dist/
+coverage/
+logs/
+tmp/
+logs/
+*.log
+
+# Files
+.env
+.env.local
+.env.*.local
+*.pem
+*.pid
+*.seed
+*.pid.lock
+*.yml
+*.yml.*
+*.log
+*.swp
+*.swo
+*.editorconfig
+.vscode/
+*.sublime-workspace
+*.sublime-project
