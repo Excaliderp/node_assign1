@@ -15,11 +15,10 @@ app.get("/movies", (req, res) => {
 });
 
 app.get("/movies/:id", (req, res) => {
-  const index = parseInt(req.params.id) - 1;
-  const movie = movies[index];
+  const id = req.params.id;
 
-  // const index = movies.findIndex((film) => film.id === id);
-
+  const movie = movies.find((film) => film.imdbID === id);
+  console.log(movie)
   if (!movie) {
     res.status(404).json({ message: "Movie not found" });
   }
