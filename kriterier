@@ -10,9 +10,9 @@ Godkänt
 
 1. Implementera följande rutter för att hantera bond filmer:
 
-● GET /movies: Hämta en lista med alla Bondfilmer.
+● X GET /movies: Hämta en lista med alla Bondfilmer.
 
-● GET /movies/:id: Hämta en specifik Bondfilm baserat på dess ID.
+● X GET /movies/:id: Hämta en specifik Bondfilm baserat på dess ID.
 
 ● POST /movies: Lägg till en ny Bondfilm.
 
