@@ -14,9 +14,9 @@ Godkänt
 
 ● X GET /movies/:id: Hämta en specifik Bondfilm baserat på dess ID.
 
-● POST /movies: Lägg till en ny Bondfilm.
+● X POST /movies: Lägg till en ny Bondfilm.
 
-● PUT /movies/:id: Uppdatera en befintlig Bondfilm baserat på dess ID.
+● X PUT /movies/:id: Uppdatera en befintlig Bondfilm baserat på dess ID.
 
 ● DELETE /movies/:id: Ta bort en Bondfilm baserat på dess ID.
 

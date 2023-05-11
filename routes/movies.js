@@ -13,26 +13,49 @@ router.get("/:id", (req, res) => {
 
   const movie = movies.find((film) => film.imdbID === id);
   if (!movie) {
-    res.status(404).json({ message: "Movie not found" });
+    return res.status(404).json({ message: "Movie not found" });
   }
 
   res.json(movie);
 });
 
-
 router.post("/", (req, res) => {
-  const nextId = String(Math.floor(Math.random() * 10000))
+  const nextId = String(Math.floor(Math.random() * 10000));
   const movie = req.body.movie;
-  console.log(typeof(nextId))
+  console.log(typeof nextId);
 
   const newMovie = {
     ...movie,
-    imdbID: nextId
+    imdbID: nextId,
+  };
+
+  movies = [newMovie, ...movies];
+  res.json(newMovie);
+});
+
+router.put("/:id", (req, res) => {
+  const id = req.params.id;
+  const movie = req.body.movie;
+  const index = movies.findIndex((film) => film.imdbID === id);
+
+  if (index === -1) {
+    return res.status(404).json({ message: "Movie not found" });
   }
 
-  movies = [newMovie, ...movies]
-  console.log(newMovie)
-  res.json(newMovie)
+  const updatedMovie = { ...movies[index], ...movie };
+  movies[index] = updatedMovie;
+  res.json(updatedMovie);
 });
+
+router.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  const movie = movie.find((film) => film.imdbID === id)
+
+  if (!movie) {
+    return res.status(404).json({ message: "Movie not found" });
+  }
+
+  
+})
 
 module.exports = router;
