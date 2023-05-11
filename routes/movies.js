@@ -49,13 +49,15 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   const id = req.params.id;
-  const movie = movie.find((film) => film.imdbID === id)
+  const movie = movies.find((film) => film.imdbID === id)
 
   if (!movie) {
     return res.status(404).json({ message: "Movie not found" });
   }
 
-  
+  const newData = movies.filter((film) => film.imdbID !== id)
+  movies = newData
+  res.json({message: "The movie '" + movie.Title + "' was removed"})
 })
 
 module.exports = router;

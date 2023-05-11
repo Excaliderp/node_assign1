@@ -18,7 +18,7 @@ Godkänt
 
 ● X PUT /movies/:id: Uppdatera en befintlig Bondfilm baserat på dess ID.
 
-● DELETE /movies/:id: Ta bort en Bondfilm baserat på dess ID.
+● X DELETE /movies/:id: Ta bort en Bondfilm baserat på dess ID.
 
 ● Hantera felaktiga förfrågningar med lämpliga statuskoder och felmeddelanden.
 
