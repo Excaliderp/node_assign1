@@ -21,19 +21,18 @@ router.get("/:id", (req, res) => {
 
 
 router.post("/", (req, res) => {
-  const nextId = Math.floor(Math.random() * 10000)
+  const nextId = String(Math.floor(Math.random() * 10000))
   const movie = req.body.movie;
+  console.log(typeof(nextId))
 
   const newMovie = {
     ...movie,
-    Title: "",
-    Year: "",
     imdbID: nextId
   }
 
-  movies.push(newMovie)
+  movies = [newMovie, ...movies]
   console.log(newMovie)
-  res.json(movies)
+  res.json(newMovie)
 });
 
 module.exports = router;
