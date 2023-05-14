@@ -20,11 +20,11 @@ Godkänt
 
 ● X DELETE /movies/:id: Ta bort en Bondfilm baserat på dess ID.
 
-● Hantera felaktiga förfrågningar med lämpliga statuskoder och felmeddelanden.
+● X Hantera felaktiga förfrågningar med lämpliga statuskoder och felmeddelanden.
 
-2. Testa alla API endpoints med Postman och säkerställ att de fungerar korrekt.
+2. X Testa alla API endpoints med Postman och säkerställ att de fungerar korrekt.
 
-3. Implementera en enkel middleware för att säkra API:et med en API-nyckel.
+3. X Implementera en enkel middleware för att säkra API:et med en API-nyckel.
 
 4. Dokumentera API:et med en README-fil som beskriver alla endpoints, deras syfte och hur man använder dem. Inkludera information om vilka parametrar och det body-innehåll som ska inkluderas i de förfrågningar som kräver det.
 

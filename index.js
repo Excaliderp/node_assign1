@@ -7,6 +7,10 @@ const port = 3006;
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hola amigo!");
+});
+
 const validApiKey = "1337";
 
 const authenticateApiKey = (req, res, next) => {
@@ -26,10 +30,6 @@ const authenticateApiKey = (req, res, next) => {
 app.use((req, res, next) => {
   authenticateApiKey(req, res, next);
 })
-
-app.get("/", (req, res) => {
-  res.send("Hola amigo!");
-});
 
 app.use("/movies", movies)
 
