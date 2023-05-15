@@ -69,7 +69,7 @@ EDIT MOVIES DATA:
       }
     }
 
-  It is very important that the objects (title, year etc.) is typed exactly as they are projected, or else you'll double data with diffetrent capitaled letters. 
+  It is very important that the objects (title, year etc.) is typed exactly as they are projected, or else you'll double data with different capitaled letters, as objects that doesn't match already existing ones gets added to the data.
 
   Replace "leet1337" with any "imdbID" from the movie list. To make it easier to notice the effect, I suggest editing the movie/movies you added in the previous part.
 
