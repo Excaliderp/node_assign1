@@ -22,7 +22,6 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   const nextId = String(Math.floor(Math.random() * 10000));
   const movie = req.body.movie;
-  console.log(typeof nextId);
 
   const newMovie = {
     ...movie,

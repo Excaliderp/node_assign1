@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
   res.send("Hola amigo!");
 });
 
-const validApiKey = "1337";
+const validApiKey = ["1337", "5", "8"];
 
 const authenticateApiKey = (req, res, next) => {
   const apiKey = req.query.apiKey
@@ -20,7 +20,7 @@ const authenticateApiKey = (req, res, next) => {
     return res.status(401).json({ message: "API key is missing."})
   }
 
-  if(apiKey !== validApiKey) {
+  if(!validApiKey.includes(apiKey)) {
     return res.status(403).json({ message: "Invalid API Key"})
   }
 
