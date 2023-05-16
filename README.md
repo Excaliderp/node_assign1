@@ -55,7 +55,7 @@ In order to add a movie, include following data to the Postman body-editor:
 
 Press "Send". The movie you added should show underneath in the same formation you used. To check that it has been added to the list of movies, simply switch the method back to GET, and you should see that the movie is in fact in the top of the list with it's friends.
 
-You are welcome to add more fields, but the ones provided are REQUIRED.
+You are welcome to add more fields, but the ones provided are REQUIRED. Year can only contain numbers, and it has to be four numbers.
 
 We use the POST method send new data to the server, in this instance creating a new movie object.
 
@@ -73,7 +73,7 @@ Using the same text formation as the previous step in the Body-field:
 "Genre": "romance"
 }
 
-The fields are required here as well and are caps-sensitive, so make sure to get all the details right.
+The fields are required here as well and are caps-sensitive, so make sure to get all the details right. Year can only contain numbers, and it has to be four numbers.
 
 Replace ":id" with any "imdbID" from the movie list. To make it easier to notice the effect, I suggest editing the movie/movies you added in the previous part.
 
