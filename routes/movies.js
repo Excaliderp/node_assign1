@@ -23,11 +23,18 @@ router.post("/", (req, res) => {
   const { Title, Year, Genre, Released } = req.body;
 
   if (!Title || !Year || !Genre || !Released) {
-    return res.status(400).json({ message: "Title, Year, Released and Genre are required fields and can not be empty." });
+    return res
+      .status(400)
+      .json({
+        message:
+          "Title, Year, Released and Genre are required fields and can not be empty.",
+      });
   }
 
-  if (!/^\d+$/.test(Year)) {
-    return res.status(400).json({ message: "Year can only contain numbers." });
+  if (!/^\d{4}$/.test(Year)) {
+    return res
+      .status(400)
+      .json({ message: "Year must contain four numbers, and only numbers." });
   }
 
   const nextId = String(Math.floor(Math.random() * 10000));
@@ -52,11 +59,18 @@ router.put("/:id", (req, res) => {
   }
 
   if (!Title || !Year || !Genre || !Released) {
-    return res.status(400).json({ message: "Title, Year, Released and Genre are required fields and can not be empty." });
+    return res
+      .status(400)
+      .json({
+        message:
+          "Title, Year, Released and Genre are required fields and can not be empty.",
+      });
   }
 
-  if (!/^\d+$/.test(Year)) {
-    return res.status(400).json({ message: "Year can only contain numbers." });
+  if (!/^\d{4}$/.test(Year)) {
+    return res
+      .status(400)
+      .json({ message: "Year must contain four numbers, and only numbers." });
   }
 
   const updatedMovie = { ...movies[index], ...req.body };
@@ -66,15 +80,15 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   const id = req.params.id;
-  const movie = movies.find((film) => film.imdbID === id)
+  const movie = movies.find((film) => film.imdbID === id);
 
   if (!movie) {
     return res.status(404).json({ message: "Movie not found" });
   }
 
-  const newData = movies.filter((film) => film.imdbID !== id)
-  movies = newData
-  res.json({message: "The movie '" + movie.Title + "' was removed"})
-})
+  const newData = movies.filter((film) => film.imdbID !== id);
+  movies = newData;
+  res.json({ message: "The movie '" + movie.Title + "' was removed" });
+});
 
 module.exports = router;

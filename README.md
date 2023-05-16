@@ -6,6 +6,7 @@ https://github.com/Excaliderp/node_assign1
 
 Download, install and start Postman.
 
+
 ACCESS THE SERVER:
 After booting up the client server, set postman method to GET, paste:
 http://localhost:3006/
@@ -14,16 +15,19 @@ And press send. If you get the text "Hola Amigo!" in the field underneath, the s
 We use the GET method to retrieve data from a server, in this example, the data from a specific URL.
 The server then returns the data we requested.
 
+
 ACCESS THE API:
 Keep the method on GET, extend the URL to:
 http://localhost:3006/movies
 
 When you press send, you'll get a 401 Unauthorized. This means you can reach the API, but you need an API key to access it.
 
+
 ADD API-KEY:
 Postman is great in the way where it has it's own GUI to add a parameter to the URL. This is excellent, since it's what we need to add the API key
 
 In the field "Key", simply add "apiKey" (caps sensitive), and in the "Value" field put "1337", which is the default API key. You should now get a long list of movies, funilly enough containing the word "Bond".
+
 
 LOOK UP DATA OF A SPECIFIC MOVIE:
 To find the data of a specific movie, we need to add an ID to the URL.
@@ -35,6 +39,7 @@ Replace ":id" in the URL with either of these ID's to see the magic happen:
 tt7521000
 tt0297197
 tt3136962
+
 
 ADD YOUR OWN MOVIE:
 To add an movie to the list, we're going to use the method POST.
@@ -53,6 +58,7 @@ Press "Send". The movie you added should show underneath in the same formation y
 You are welcome to add more fields, but the ones provided are REQUIRED.
 
 We use the POST method send new data to the server, in this instance creating a new movie object.
+
 
 EDIT MOVIES DATA:
 Another fun thing you can do with the imdbID is edit the data about the movies.
@@ -73,6 +79,7 @@ Replace ":id" with any "imdbID" from the movie list. To make it easier to notice
 
 We use the PUT method tp update/edit/change data that already exists on the server. We need to use a sort of anchor, a way to identify specific objects on the server, for instance, an ID.
 
+
 REMOVE MOVIES:
 The last thing we'll do for now, again using imdbID is removing movies from the list.
 Using the method DELETE, and again the URL:
@@ -83,6 +90,7 @@ Postman will tell you which movie is removed, but to check for yourself, change 
 
 The method DELETE is probably the most straigtforward. We use it to remove data from the server. Lite the PUT method, we need a way to identify the specific object we want to remove.
 
+
 ADD A NEW API KEY:
 To add your very own API key, use the method POST and call the URL:
 http://localhost:3006/addApiKey.
@@ -90,6 +98,7 @@ http://localhost:3006/addApiKey.
 You'll get a randomized key to use at your disposal.
 
 To check the list if existing keys, simply switch the method to GET, use the same URL and you'll get a list of all the valid API keys. Yours should be on the bottom.
+
 
 REMOVE AN API KEY:
 To remove a valid API key, use the method DELETE and call for the URL:
