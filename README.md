@@ -28,10 +28,10 @@ ADD API-KEY:
 LOOK UP DATA OF A SPECIFIC MOVIE:
   To find the data of a specific movie, we need to add an ID to the URL. 
   To add an ID to the URL, simply put a value after /movies, e.g: 
-  http://localhost:3006/movies/leet1337?apiKey=1337
+  http://localhost:3006/movies/:id?apiKey=1337
 
-  Ofc, "leet1337" isn't an actual ID. Using the GET method and recieving the list of movies, you'll see that every movies has an "imdbID" value, this is the movies individual ID. 
-  Replace "leet1337" in the URL with either of these ID's to see the magic happen: 
+  Using the GET method and recieving the list of movies, you'll see that every movies has an "imdbID" value, this is the movies individual ID. 
+  Replace ":id" in the URL with either of these ID's to see the magic happen: 
     tt7521000
     tt0297197
     tt3136962
@@ -59,7 +59,7 @@ ADD YOUR OWN MOVIE:
 EDIT MOVIES DATA:
   Another fun thing you can do with the imdbID is edit the data  about the movies. 
   Using the method PUT and yet again calling for the URL:
-  http://localhost:3006/movies/leet1337?apiKey=1337
+  http://localhost:3006/movies/:id?apiKey=1337
 
   Using the same text formation as the previous step in the Body-field:
      {
@@ -71,16 +71,30 @@ EDIT MOVIES DATA:
 
   It is very important that the objects (title, year etc.) is typed exactly as they are projected, or else you'll double data with different capitaled letters, as objects that doesn't match already existing ones gets added to the data.
 
-  Replace "leet1337" with any "imdbID" from the movie list. To make it easier to notice the effect, I suggest editing the movie/movies you added in the previous part.
+  Replace ":id" with any "imdbID" from the movie list. To make it easier to notice the effect, I suggest editing the movie/movies you added in the previous part.
 
   We use the PUT method tp update/edit/change data that already exists on the server. We need to use a sort of anchor, a way to identify specific objects on the server, for instance, an ID.
 
 REMOVE MOVIES:
   The last thing we'll do for now, again using imdbID is removing movies from the list.
   Using the method DELETE, and again the URL:
-  http://localhost:3006/movies/leet1337?apiKey=1337
+  http://localhost:3006/movies/:id?apiKey=1337
 
-  Replace "leet1337" with any imdbID (I again suggest the movie/movies you added earlier). 
-  Postman will tell you which movie is removed, but to check for yourself, change the method to GET, remove the id (leet1337) from the URL and you'll again see the list of movies, and see that your movie/movies are no longer there.
+  Replace ":id" with any imdbID (I again suggest the movie/movies you added earlier). 
+  Postman will tell you which movie is removed, but to check for yourself, change the method to GET, remove the id (:id) from the URL and you'll again see the list of movies, and see that your movie/movies are no longer there.
   
   The method DELETE is probably the most straigtforward. We use it to remove data from the server. Lite the PUT method, we need a way to identify the specific object we want to remove. 
+
+ADD A NEW API KEY:
+  To add your very own API key, use the method POST and call the URL:
+  http://localhost:3006/addApiKey.
+
+  You'll get a randomized key to use at your disposal.
+
+  To check the list if existing keys, simply switch the method to GET, use the same URL and you'll get a list of all the valid API keys. Yours should be on the bottom.
+
+REMOVE AN API KEY:
+  To remove a valid API key, use the method DELETE and call for the URL:
+  http://localhost:3006/addApiKey/:id
+
+  Replace :id with a valid key from the list. Use the GET method again to see that the key is, in fact, missing from the list. 

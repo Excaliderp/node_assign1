@@ -44,14 +44,14 @@ För att uppnå väl godkänt, utöver kraven för godkänt, ska ni även:
 
 ● Validera att fältvärden är korrekta (t.ex. att åral är numeriska)**
 
-2. Anpassa API-nyckel middleware för att stödja flera giltiga API-nycklar och utveckla endpoints för att utfärda och återkalla API-nycklar.
+2. X Anpassa API-nyckel middleware för att stödja flera giltiga API-nycklar och utveckla endpoints för att utfärda och återkalla API-nycklar.
 
-● Skapa en lista med giltiga API-nycklar och kontrollera om den skickade API-nyckeln finns i listan.
+● X Skapa en lista med giltiga API-nycklar och kontrollera om den skickade API-nyckeln finns i listan.
 
-● Implementera ytterligare API-endpoints för att lägga till och ta bort API-nycklar från listan över giltiga nycklar.
+● X Implementera ytterligare API-endpoints för att lägga till och ta bort API-nycklar från listan över giltiga nycklar.
 
-3. Separera routes i en mapp kallad “routes” som innehåller olika filer för att underlätta läsbarhet.
+3. X Separera routes i en mapp kallad “routes” som innehåller olika filer för att underlätta läsbarhet.
 
-4. Utöver de krav på dokumentationen i README filen, inkludera information om hur man tar bort och lägger till en API nyckel.
+4. X Utöver de krav på dokumentationen i README filen, inkludera information om hur man tar bort och lägger till en API nyckel.
 
 * Obligatoriska fält: Title, Year, Released, Genre. ** Krav på validering. Se till att Year är ett årtal.
