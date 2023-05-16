@@ -20,7 +20,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const { Title, Year, Genre, Released } = req.body.movie;
+  const { Title, Year, Genre, Released } = req.body;
 
   if (!Title || !Year || !Genre || !Released) {
     return res.status(400).json({ message: "Title, Year, Released and Genre are required fields and can not be empty." });
@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
   }
 
   const nextId = String(Math.floor(Math.random() * 10000));
-  const movie = req.body.movie;
+  const movie = req.body;
 
   const newMovie = {
     ...movie,
@@ -44,14 +44,22 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
   const id = req.params.id;
-  const movie = req.body.movie;
+  const { Title, Year, Genre, Released } = req.body;
   const index = movies.findIndex((film) => film.imdbID === id);
 
   if (index === -1) {
     return res.status(404).json({ message: "Movie not found" });
   }
 
-  const updatedMovie = { ...movies[index], ...movie };
+  if (!Title || !Year || !Genre || !Released) {
+    return res.status(400).json({ message: "Title, Year, Released and Genre are required fields and can not be empty." });
+  }
+
+  if (!/^\d+$/.test(Year)) {
+    return res.status(400).json({ message: "Year can only contain numbers." });
+  }
+
+  const updatedMovie = { ...movies[index], ...req.body };
   movies[index] = updatedMovie;
   res.json(updatedMovie);
 });
