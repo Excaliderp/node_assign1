@@ -20,6 +20,16 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+  const { Title, Year, Genre, Released } = req.body.movie;
+
+  if (!Title || !Year || !Genre || !Released) {
+    return res.status(400).json({ message: "Title, Year, Released and Genre are required fields and can not be empty." });
+  }
+
+  if (!/^\d+$/.test(Year)) {
+    return res.status(400).json({ message: "Year can only contain numbers." });
+  }
+
   const nextId = String(Math.floor(Math.random() * 10000));
   const movie = req.body.movie;
 

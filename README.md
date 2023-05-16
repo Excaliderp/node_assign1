@@ -37,22 +37,22 @@ LOOK UP DATA OF A SPECIFIC MOVIE:
     tt3136962
 
 ADD YOUR OWN MOVIE:
-
-  Change the method from GET to POST
+  To add an movie to the list, we're going to use the method POST.
   Call for the url: http://localhost:3006/movies?apiKey=1337
-  Select the function "Body", select raw and then to the right choose JSON
-  In Postmans editor, use JSON formation to enter your chosen value, for example:
+  Select "Body" instead of "Params", select raw and then choose JSON where is says text.
+  In order to add a movie, include following data to the Postman body-editor:
    {
       "movie": {
         "Title": "Movie name",
-        "Year": "The release year"
+        "Year": "The release year",
+        "Released": "The release date"
+        "Genre": "The genre"
       }
     }
 
   Press "Send". The movie you added should show underneath in the same formation you used. To check that it has been added to the list of movies, simply switch the method back to GET, and you should see that the movie is in fact in the top of the list with it's friends. 
 
-  Use the data from previous steps to find more values related to the objects.
-  The value for imdbID is randomized, so you don't need to add a value to that tag.
+  You are welcome to add more fields, but the ones provided are REQUIRED.
 
   We use the POST method send new data to the server, in this instance creating a new movie object.
 
